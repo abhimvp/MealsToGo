@@ -52,3 +52,10 @@ Join our community of developers creating universal apps.
 ## Overview of what is what
 
 - `app.json` - this is where we control, sort of what we would call the metadata of the application , like it controls the name of the app when it goes to play store, icon you see when you install the application on your phone ..etc.
+
+## Played around on how stack & Tab Navigation can be done using expo.
+
+- Now i got it - i was confused at the start but now i feel better when i did it step by step ,took time but never mind initial understanding of how things working helps, now i can just go ahead and build the app, documentation is great. went through https://docs.expo.dev/develop/file-based-routing/ & https://docs.expo.dev/router/advanced/tabs/
+- When the app loads , it shows the index.tsx file present in (home) & remaining as usual.For this commit & test code - i will upload pictures for my assets/images/reference to get back to this later on what is displayed for what code i have tried.
+  <img src="assets/images/When app loads Home Tab index tsx.jpg" width="150" /> <img src="assets/images/Home details Stack.jpg" width="150" /> <img src="assets/images/User Tab.jpg" width="150" />
+  <img src="assets/images/USer details Stack.jpg" width="150" /> <img src="assets/images/Settings Tab.jpg" width="150" /> <img src="assets/images/Test Tab.jpg" width="150" />
