@@ -5,6 +5,16 @@ export default function TabLayout() {
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
       <Tabs.Screen
+        name="(home)"
+        options={{
+          title: "Food",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={28} name="forward" color={color} />
+          ),
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
         name="(user)"
         options={{
           title: "User Stack navigation",
@@ -14,16 +24,7 @@ export default function TabLayout() {
           headerShown: false,
         }}
       />
-      <Tabs.Screen
-        name="(home)"
-        options={{
-          title: "Stack navigation",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="forward" color={color} />
-          ),
-          headerShown: false,
-        }}
-      />
+
       <Tabs.Screen
         name="settings"
         options={{
