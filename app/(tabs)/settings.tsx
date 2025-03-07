@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from "react-native";
+import React from "react";
 
 export default function SettingsTab() {
   return (
@@ -11,7 +12,7 @@ export default function SettingsTab() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

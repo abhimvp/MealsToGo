@@ -57,5 +57,87 @@ Join our community of developers creating universal apps.
 
 - Now i got it - i was confused at the start but now i feel better when i did it step by step ,took time but never mind initial understanding of how things working helps, now i can just go ahead and build the app, documentation is great. went through https://docs.expo.dev/develop/file-based-routing/ & https://docs.expo.dev/router/advanced/tabs/
 - When the app loads , it shows the index.tsx file present in (home) & remaining as usual.For this commit & test code - i will upload pictures for my assets/images/reference to get back to this later on what is displayed for what code i have tried.
-  <img src="assets/images/When app loads Home Tab index tsx.jpg" width="150" /> <img src="assets/images/Home details Stack.jpg" width="150" /> <img src="assets/images/User Tab.jpg" width="150" />
-  <img src="assets/images/USer details Stack.jpg" width="150" /> <img src="assets/images/Settings Tab.jpg" width="150" /> <img src="assets/images/Test Tab.jpg" width="150" />
+
+<img src="assets/images/When app loads Home Tab index tsx.jpg" width="150" /> <img src="assets/images/Home details Stack.jpg" width="150" /> <img src="assets/images/User Tab.jpg" width="150" /> <img src="assets/images/USer details Stack.jpg" width="150" /> <img src="assets/images/Settings Tab.jpg" width="150" /> <img src="assets/images/Test Tab.jpg" width="150" />
+
+- ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+  - ESLint is completely pluggable. Every single rule is a plugin and you can add more at runtime. You can also add community plugins, configurations, and parsers to extend the functionality of ESLint.
+  - https://github.com/facebook/react-native/tree/main/packages/eslint-config-react-native
+  - `yarn add --dev eslint prettier @react-native/eslint-config`
+  - created file `.eslintrc` and telling eslint you're going to use React Native Community Configuration.
+  - In `package.json` - "lint": "eslint . --ext .js" in scripts - calling eslint package and saying (.) means check whole directory but only for the `js` files.
+  - - `yarn add react-native-paper` - for fun
+
+```tsx
+$ yarn lint
+yarn run v1.22.22
+$ eslint . --ext .js,.jsx,.ts,.tsx
+Warning: React version not specified in eslint-plugin-react settings. See https://github.com/jsx-eslint/eslint-plugin-react#configuration .
+
+C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(home)\_layout.tsx
+   5:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  16:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  17:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(home)\details.tsx
+  5:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  6:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(home)\index.tsx
+  6:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  7:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  8:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(user)\_layout.tsx
+   5:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  16:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  17:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(user)\detailsq.tsx
+  5:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  6:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(user)\indexq.tsx
+  6:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  7:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  8:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\_layout.tsx
+   6:5   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   7:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  11:40  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  15:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  19:40  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  23:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  27:38  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  30:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  34:38  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\newhome.tsx
+  5:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  6:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\settings.tsx
+  5:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  6:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\+not-found.tsx
+  6:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  7:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  8:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  9:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+✖ 33 problems (33 errors, 0 warnings)
+
+```
+
+- Fix was for me to add `import React from 'react';` in the following error files .. silly
+- After Fix looks like :
+
+```jsx
+$ yarn lint
+yarn run v1.22.22
+$ eslint . --ext .js,.jsx,.ts,.tsx
+Warning: React version not specified in eslint-plugin-react settings. See https://github.com/jsx-eslint/eslint-plugin-react#configuration .
+Done in 4.15s.
+```
