@@ -3,6 +3,7 @@ import { Text, Image, View } from "react-native";
 import styled from "styled-components/native";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
+import { Spacer } from "../../../components/spacer/spacer.component";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 
@@ -83,11 +84,11 @@ export const RestaurantInfoCard = ({ restaurant }) => {
               {isClosedTemporarily && (
                 <Text style={{ color: "red" }}>CLOSED TEMPORARILY</Text>
               )}
-              <View style={{ paddingLeft: 12 }} />
+              <Spacer variant="left.large" />
               {isOpenNow && (
                 <Open key={"isOpennow"} xml={open} width={20} height={20} />
               )}
-              <View style={{ paddingLeft: 12 }} />
+              <Spacer variant="left.large" />
               {/*Concept of SPacer: Better to use View ,, bcoz we want elements to push other elements aside.*/}
               <Image
                 style={{ width: 15, height: 15 }}
