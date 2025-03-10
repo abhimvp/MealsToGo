@@ -176,4 +176,11 @@ In summary, npx expo start -c or yarn expo start --clear starts the Expo develop
   - optimize this component:
 - also if we see error on android like : "Error while updating property 'position' in shadow node of type : RTC View"..etc - one of the scenarios where you write code for IOS and it breaks on android at times. - this means -> Android is having difficulties rendering the styled component view from the get-go when the app launches.It's unable to process getVariant function on load.- so the way to go about this is `inline function` that we're running inside of `styled.View` - we need to seperate that out. Instead of Spacer component immediately retun styledView , we return the variant that it needs to render instead of running dynamic function .By doing this we optimize our ability to Render out the spacer , so it will become a normal component (and we need to import React) . we will utilize `useTheme` hook , that styled system extends us so that we can calculate variant inside of function body of `Spacer` , which calculate getvariant Func ahead of time and we return `<SpacerView>` we'll we give the variant. and ensure that spacerview renders out children if there are any.
 - why do we need consistency?:
+
   - also build a custom text component(created typography folder ) & get rid of Title`styledComponent` to have a consistent text across the code base. existing example : Spacer component.
+
+- `FlatList` : put all of our restaurant cards in a list . just like we see restaurants info on food delivery apps.Allowing our data to be rendered in a specific way.
+  - https://reactnative.dev/docs/flatlist
+  - https://react.dev/learn/rendering-lists
+  - https://legacy.reactjs.org/docs/lists-and-keys.html - why we need keys - great article to refer.`Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity:`
+  - https://reactnative.dev/docs/scrollview

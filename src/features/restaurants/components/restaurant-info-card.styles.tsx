@@ -12,7 +12,7 @@ export const Info = styled.View`
 `;
 
 export const RestaurantCard = styled(Card)`
-  backgroundColor: ${(props) => props.theme.colors.bg.primary};
+  background-color: ${(props) => props.theme.colors.bg.primary};
   fontweight: bold;
 `;
 
