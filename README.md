@@ -82,51 +82,10 @@ C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(home)\_layout.
 C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(home)\details.tsx
   5:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
   6:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-
-C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(home)\index.tsx
-  6:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  7:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  8:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-
-C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(user)\_layout.tsx
-   5:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  16:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  17:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-
-C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(user)\detailsq.tsx
-  5:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  6:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-
-C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\(user)\indexq.tsx
-  6:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  7:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  8:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-
-C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\_layout.tsx
-   6:5   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-   7:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  11:40  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  15:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  19:40  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  23:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  27:38  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  30:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  34:38  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-
-C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\newhome.tsx
-  5:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  6:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-
-C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\(tabs)\settings.tsx
-  5:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  6:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-
-C:\Users\abhis\Desktop\ReactNative\projects\MealsToGo\app\+not-found.tsx
-  6:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  7:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  8:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-  9:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-
+....
+...
+..
+.
 ✖ 33 problems (33 errors, 0 warnings)
 
 ```
@@ -161,7 +120,7 @@ For example, to create an initial route of your app, you can add **index.tsx**�
 ## Resources
 
 - Card : <https://callstack.github.io/react-native-paper/docs/components/Card/>
-- styled-components can be used with React Native in the same way and with the same import.<https://styled-components.com/docs/basics#react-native> - styleSheets are great , but we want more consistency - there's something called DesignOps - when you're building a product , taking into account all of the constraints and making sure that the constraints are fit,picture perfect along the way - a design system - a theme - which gives us consistency `styled-components is the result of wondering how we could enhance CSS for styling React component systems. By focusing on a single use case we managed to optimize the experience for developers as well as the output for end users.` - so we will move away from StyleSheet syntax and create components having their styling already on it. For example : Also DO `yarn add styled-components` & `yarn add --dev @types/styled-components`
+- styled-components can be used with React Native in the same way and with the same import.<https://styled-components.com/docs/basics#react-native> - styleSheets are great , but we want more consistency - there's something called DesignOps - when you're building a product , taking into account all of the constraints and making sure that the constraints are fit,picture perfect along the way - a design system - a theme - which gives us consistency `styled-components is the result of wondering how we could enhance CSS for styling React component systems. By focusing on a single use case we managed to optimize the experience for developers as well as the output for end users.` - so we will move away from StyleSheet syntax and create components having their styling already on it. For example : Also DO `yarn add styled-components` & `yarn add --dev @types/styled-components` & `yarn add @types/styled-components @types/styled-components-react-native`
 
 ```tsx
 import React from "react";
@@ -189,3 +148,25 @@ class MyReactNativeComponent extends React.Component {
 - Now if we want to acheive consistency - we go use this [Theming](https://styled-components.com/docs/advanced) - styled-components has full theming support by exporting a `<ThemeProvider>` wrapper component. This component provides a theme to all React components underneath itself via the `context API`. In the render tree all styled-components will have access to the provided theme, even when they are multiple levels deep.
 - use this <https://react.dev/> to understand things like what's [contextAPI](https://react.dev/learn/passing-data-deeply-with-context#context-an-alternative-to-passing-props) in [react](https://legacy.reactjs.org/docs/context.html).`Context provides a way to pass data through the component tree without having to pass props down manually at every level.`
 - let's setup our theme: (create infrastructure folder & theme folder as well)
+
+- Loading custom fonts:
+  - expo google fonts - [github](https://github.com/expo/google-fonts) - Do `npx expo install @expo-google-fonts/inter expo-font` - get oswald & lato fonts - `yarn add @expo-google-fonts/oswald` & `yarn add @expo-google-fonts/lato`
+- star.js : Icon of star - we need [react-native-svg](https://github.com/software-mansion/react-native-svg) to load starIcon
+  - Use with [svg files](https://github.com/software-mansion/react-native-svg/blob/main/USAGE.md#use-with-svg-files) - `import { SvgXml } from 'react-native-svg';`
+  - Now we need to render the star icon the amount of times rating occurs.
+
+```bash
+yarn expo start --clear
+
+The -c or --clear flag is used to clear the Metro bundler cache. The Metro bundler cache is used to speed up subsequent starts of the Expo development server. However, sometimes the cache can become outdated or corrupted, leading to issues such as:
+
+Unexpected behavior: The app might not reflect the latest code changes.
+Build errors: The bundler might fail to build the app due to cached artifacts conflicting with new dependencies or code.
+Clearing the cache forces Metro to rebuild everything from scratch, ensuring you have a clean and consistent build. It's often helpful to use the -c flag in situations like:
+
+After updating dependencies: When you add, remove, or update npm or yarn packages, clearing the cache can prevent issues related to dependency changes.
+When encountering unexplained errors: If you are experiencing strange errors or the app is not behaving as expected, clearing the cache is a good first step to rule out cache-related problems.
+
+For a fresh start: Using -c ensures you are starting with a clean slate, which can be useful when you want to be absolutely sure you are running the latest version of your code and dependencies.
+In summary, npx expo start -c or yarn expo start --clear starts the Expo development server with a cleared cache, which is useful for resolving cache-related issues and ensuring a fresh start, especially after dependency changes or when encountering unexpected behavior.
+```
