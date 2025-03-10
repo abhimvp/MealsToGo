@@ -170,3 +170,5 @@ When encountering unexplained errors: If you are experiencing strange errors or 
 For a fresh start: Using -c ensures you are starting with a clean slate, which can be useful when you want to be absolutely sure you are running the latest version of your code and dependencies.
 In summary, npx expo start -c or yarn expo start --clear starts the Expo development server with a cleared cache, which is useful for resolving cache-related issues and ensuring a fresh start, especially after dependency changes or when encountering unexpected behavior.
 ```
+
+- `open.js` - Adding Open Now SVG.
