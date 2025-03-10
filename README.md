@@ -53,16 +53,16 @@ Join our community of developers creating universal apps.
 
 - `app.json` - this is where we control, sort of what we would call the metadata of the application , like it controls the name of the app when it goes to play store, icon you see when you install the application on your phone ..etc.
 
-## Played around on how stack & Tab Navigation can be done using expo.
+## Played around on how stack & Tab Navigation can be done using expo
 
-- Now i got it - i was confused at the start but now i feel better when i did it step by step ,took time but never mind initial understanding of how things working helps, now i can just go ahead and build the app, documentation is great. went through https://docs.expo.dev/develop/file-based-routing/ & https://docs.expo.dev/router/advanced/tabs/
+- Now i got it - i was confused at the start but now i feel better when i did it step by step ,took time but never mind initial understanding of how things working helps, now i can just go ahead and build the app, documentation is great. went through <https://docs.expo.dev/develop/file-based-routing/> & <https://docs.expo.dev/router/advanced/tabs/>
 - When the app loads , it shows the index.tsx file present in (home) & remaining as usual.For this commit & test code - i will upload pictures for my assets/images/reference to get back to this later on what is displayed for what code i have tried.
 
-<img src="assets/images/When app loads Home Tab index tsx.jpg" width="150" /> <img src="assets/images/Home details Stack.jpg" width="150" /> <img src="assets/images/User Tab.jpg" width="150" /> <img src="assets/images/USer details Stack.jpg" width="150" /> <img src="assets/images/Settings Tab.jpg" width="150" /> <img src="assets/images/Test Tab.jpg" width="150" />
+![When app loads Home Tab index tsx](assets/images/When app loads Home Tab index tsx.jpg) ![Home details Stack](assets/images/Home details Stack.jpg) ![User Tab](assets/images/User Tab.jpg) ![User details Stack](assets/images/USer details Stack.jpg) ![Settings Tab](assets/images/Settings Tab.jpg) ![Test Tab](assets/images/Test Tab.jpg)
 
 - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
   - ESLint is completely pluggable. Every single rule is a plugin and you can add more at runtime. You can also add community plugins, configurations, and parsers to extend the functionality of ESLint.
-  - https://github.com/facebook/react-native/tree/main/packages/eslint-config-react-native
+  - <https://github.com/facebook/react-native/tree/main/packages/eslint-config-react-native>
   - `yarn add --dev eslint prettier @react-native/eslint-config`
   - created file `.eslintrc` and telling eslint you're going to use React Native Community Configuration.
   - In `package.json` - "lint": "eslint . --ext .js" in scripts - calling eslint package and saying (.) means check whole directory but only for the `js` files.
@@ -160,8 +160,8 @@ For example, to create an initial route of your app, you can addÂ **index.tsx**Â
 
 ## Resources
 
-- Card : https://callstack.github.io/react-native-paper/docs/components/Card/
-- styled-components can be used with React Native in the same way and with the same import.https://styled-components.com/docs/basics#react-native - styleSheets are great , but we want more consistency - there's something called DesignOps - when you're building a product , taking into account all of the constraints and making sure that the constraints are fit,picture perfect along the way - a design system - a theme - which gives us consistency `styled-components is the result of wondering how we could enhance CSS for styling React component systems. By focusing on a single use case we managed to optimize the experience for developers as well as the output for end users.` - so we will move away from StyleSheet syntax and create components having their styling already on it. For example : Also DO `yarn add styled-components` & `yarn add --dev @types/styled-components`
+- Card : <https://callstack.github.io/react-native-paper/docs/components/Card/>
+- styled-components can be used with React Native in the same way and with the same import.<https://styled-components.com/docs/basics#react-native> - styleSheets are great , but we want more consistency - there's something called DesignOps - when you're building a product , taking into account all of the constraints and making sure that the constraints are fit,picture perfect along the way - a design system - a theme - which gives us consistency `styled-components is the result of wondering how we could enhance CSS for styling React component systems. By focusing on a single use case we managed to optimize the experience for developers as well as the output for end users.` - so we will move away from StyleSheet syntax and create components having their styling already on it. For example : Also DO `yarn add styled-components` & `yarn add --dev @types/styled-components`
 
 ```tsx
 import React from "react";
@@ -187,5 +187,5 @@ class MyReactNativeComponent extends React.Component {
 ```
 
 - Now if we want to acheive consistency - we go use this [Theming](https://styled-components.com/docs/advanced) - styled-components has full theming support by exporting a `<ThemeProvider>` wrapper component. This component provides a theme to all React components underneath itself via the `context API`. In the render tree all styled-components will have access to the provided theme, even when they are multiple levels deep.
-- use this https://react.dev/ to understand things like what's [contextAPI](https://react.dev/learn/passing-data-deeply-with-context#context-an-alternative-to-passing-props) in [react](https://legacy.reactjs.org/docs/context.html).`Context provides a way to pass data through the component tree without having to pass props down manually at every level.`
+- use this <https://react.dev/> to understand things like what's [contextAPI](https://react.dev/learn/passing-data-deeply-with-context#context-an-alternative-to-passing-props) in [react](https://legacy.reactjs.org/docs/context.html).`Context provides a way to pass data through the component tree without having to pass props down manually at every level.`
 - let's setup our theme: (create infrastructure folder & theme folder as well)

@@ -6,10 +6,10 @@ import { RestaurantScreen } from "../../../src/features/restaurants/screens/rest
 export default function HomeScreen() {
   return (
     <>
-    <ThemeProvider theme={theme}>
-      <RestaurantScreen />
-    </ThemeProvider>
-      
+      <ThemeProvider theme={theme}>
+        <RestaurantScreen />
+      </ThemeProvider>
+
       <ExpoStatusBar style="auto" backgroundColor="#000" />
     </>
   );
