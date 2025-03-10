@@ -161,7 +161,7 @@ For example, to create an initial route of your app, you can addÂ **index.tsx**Â
 ## Resources
 
 - Card : https://callstack.github.io/react-native-paper/docs/components/Card/
-- styled-components can be used with React Native in the same way and with the same import.https://styled-components.com/docs/basics#react-native - styleSheets are great , but we want more consistency - there's something called DesignOps - when you're building a product , taking into account all of the constraints and making sure that the constraints are fit,picture perfect along the way - a design system - a theme - which gives us consistency `styled-components is the result of wondering how we could enhance CSS for styling React component systems. By focusing on a single use case we managed to optimize the experience for developers as well as the output for end users.` - so we will move away from StyleSheet syntax and create components having their styling already on it. For example : Also DO `yarn add styled-components`
+- styled-components can be used with React Native in the same way and with the same import.https://styled-components.com/docs/basics#react-native - styleSheets are great , but we want more consistency - there's something called DesignOps - when you're building a product , taking into account all of the constraints and making sure that the constraints are fit,picture perfect along the way - a design system - a theme - which gives us consistency `styled-components is the result of wondering how we could enhance CSS for styling React component systems. By focusing on a single use case we managed to optimize the experience for developers as well as the output for end users.` - so we will move away from StyleSheet syntax and create components having their styling already on it. For example : Also DO `yarn add styled-components` & `yarn add --dev @types/styled-components`
 
 ```tsx
 import React from "react";
@@ -185,3 +185,7 @@ class MyReactNativeComponent extends React.Component {
   }
 }
 ```
+
+- Now if we want to acheive consistency - we go use this [Theming](https://styled-components.com/docs/advanced) - styled-components has full theming support by exporting a `<ThemeProvider>` wrapper component. This component provides a theme to all React components underneath itself via the `context API`. In the render tree all styled-components will have access to the provided theme, even when they are multiple levels deep.
+- use this https://react.dev/ to understand things like what's [contextAPI](https://react.dev/learn/passing-data-deeply-with-context#context-an-alternative-to-passing-props) in [react](https://legacy.reactjs.org/docs/context.html).`Context provides a way to pass data through the component tree without having to pass props down manually at every level.`
+- let's setup our theme: (create infrastructure folder & theme folder as well)

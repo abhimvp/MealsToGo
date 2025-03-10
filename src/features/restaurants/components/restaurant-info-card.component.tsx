@@ -1,11 +1,27 @@
 import React from "react";
 import styled from "styled-components/native";
-import { View, Text, StyleSheet } from "react-native";
 import { Card } from "react-native-paper";
 
+// here we are using styled components to style the text.
 const Title = styled.Text`
-  padding: 16px;
-  color: red;
+  margintop: ${(props) => props.theme.space[0]};
+  color: ${(props) => props.theme.colors.ui.primary};
+  marginleft: ${(props) => props.theme.space[2]};
+`;
+// here we are using styled components to style the Card component.
+const RestaurantCard = styled(Card)`
+  backgroundcolor: ${(props) => props.theme.colors.bg.primary};
+  fontweight: bold;
+`;
+
+const RestaurantCardCover = styled(Card.Cover)`
+  padding: ${(props) => props.theme.space[2]};
+  background-color: ${(props) => props.theme.colors.bg.primary};
+`;
+
+const CardText = styled.Text`
+  padding: 2px;
+  marginleft: ${(props) => props.theme.space[2]};
 `;
 // here we get the restaurant name from search bar
 export const RestaurantInfoCard = ({ restaurant }) => {
@@ -21,30 +37,14 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     isClosedTemporarily = true,
   } = restaurant; //here restaurant is the object so we got to destructure it.
   return (
-    <Card elevation={5} style={styles.card}>
-      <Card.Cover
+    <RestaurantCard elevation={5}>
+      <RestaurantCardCover
         key={name}
         source={{ uri: "https://picsum.photos/700" }}
-        style={styles.cover}
       />
       <Title> {name}</Title>
-      <Text>{address}</Text>
-      <Text>{openingHours}</Text>
-    </Card>
+      <CardText>{address}</CardText>
+      <CardText>{openingHours}</CardText>
+    </RestaurantCard>
   );
 };
-
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: "yellow",
-    fontWeight: "bold",
-  },
-  cover: {
-    padding: 10,
-    backgroundColor: "white",
-  },
-  title: {
-    marginTop: 4,
-    backgroundColor: "orange",
-  },
-});

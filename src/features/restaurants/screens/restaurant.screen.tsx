@@ -5,50 +5,50 @@ import { Searchbar } from "react-native-paper";
 import { SafeAreaView } from "react-native";
 import { StatusBar } from "react-native";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+import styled from "styled-components/native";
 
-export const RestaurantScreen =() =>{
+const SafeArea = styled(SafeAreaView)`
+  flex: 1;
+  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
+`;
+
+const SearchContainer = styled(View)`
+  padding: ${(props) => props.theme.space[3]};
+`;
+
+const RestaurantListContainer = styled(View)`
+  flex: 1;
+  padding: ${(props) => props.theme.space[3]};
+  background-color: orange;
+`;
+
+export const RestaurantScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.search}>
+    <SafeArea>
+      <SearchContainer>
         <Searchbar
           placeholder="Search for an Item"
           onChangeText={setSearchQuery}
           value={searchQuery}
           mode="bar"
         />
-      </View>
-      <View style={styles.list}>
-        <RestaurantInfoCard restaurant={{
-          name: "My Restaurant",
-          icon: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-          photos: [
-            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-          ],
-          address: "100 some random street",
-          openingHours: "8:00 AM - 9:00 PM",
-          rating: 4,
-          isClosedTemporarily: true,
-        }} />
+      </SearchContainer>
+      <RestaurantListContainer>
+        <RestaurantInfoCard
+          restaurant={{
+            name: "My Restaurant",
+            icon: "XX",
+            photos: ["XXX"],
+            address: "100 some random street",
+            openingHours: "8:00 AM - 9:00 PM",
+            rating: 4,
+            isClosedTemporarily: true,
+          }}
+        />
         {/* <Text>Home</Text>
         <Link href="/details">View details</Link> */}
-      </View>
-    </SafeAreaView>
+      </RestaurantListContainer>
+    </SafeArea>
   );
-}
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight,
-    // backgroundColor: "yellow",
-  },
-  search: {
-    padding: 12,
-  },
-  list: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: "white",
-    fontWeight: "bold",
-  },
-});
+};
