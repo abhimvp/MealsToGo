@@ -4,7 +4,7 @@ import React from "react";
 export default function DetailsScreen() {
   return (
     <View style={styles.container}>
-      <Text>Details</Text>
+      <Text>Details  - Orey Aaazamu lagettaoroy</Text>
     </View>
   );
 }

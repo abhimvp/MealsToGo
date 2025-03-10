@@ -23,7 +23,6 @@ export default function HomeScreen() {
       <ThemeProvider theme={theme}>
         <RestaurantScreen />
       </ThemeProvider>
-
       <ExpoStatusBar style="auto" backgroundColor="#000" />
     </>
   );

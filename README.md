@@ -180,7 +180,9 @@ In summary, npx expo start -c or yarn expo start --clear starts the Expo develop
   - also build a custom text component(created typography folder ) & get rid of Title`styledComponent` to have a consistent text across the code base. existing example : Spacer component.
 
 - `FlatList` : put all of our restaurant cards in a list . just like we see restaurants info on food delivery apps.Allowing our data to be rendered in a specific way.
-  - https://reactnative.dev/docs/flatlist
-  - https://react.dev/learn/rendering-lists
-  - https://legacy.reactjs.org/docs/lists-and-keys.html - why we need keys - great article to refer.`Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity:`
-  - https://reactnative.dev/docs/scrollview
+  - <https://reactnative.dev/docs/flatlist>
+  - <https://react.dev/learn/rendering-lists>
+  - <https://legacy.reactjs.org/docs/lists-and-keys.html> - why we need keys - great article to refer.`Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity:`
+  - <https://reactnative.dev/docs/scrollview>
+- React Navigation - <https://reactnavigation.org/docs/getting-started/> - but i'll be using expo navigation tools - easy peasey. - able to navigate to details page as i needed using [`router`](https://docs.expo.dev/router/advanced/stack/#set-screen-options-dynamically)
+- for Icons: [Expo Icons Index](https://icons.expo.fyi/Index) & [Expo Icons Documentation](https://docs.expo.dev/guides/icons/#expovector-icons)

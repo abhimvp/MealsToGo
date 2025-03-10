@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "expo-router";
 import { SvgXml } from "react-native-svg";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
@@ -27,11 +28,17 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     rating = 4,
     isClosedTemporarily = true,
   } = restaurant; //here restaurant is the object so we got to destructure it.
-
+  const router = useRouter();
   const ratingArray = Array.from(new Array(Math.floor(rating)));
   // console.log(ratingArray); // (NOBRIDGE) LOG  [undefined, undefined, undefined, undefined]
+  // https://docs.expo.dev/router/advanced/stack/#set-screen-options-dynamically
   return (
-    <RestaurantCard elevation={5}>
+    <RestaurantCard
+      elevation={5}
+      onPress={() => {
+        router.push("/(tabs)/(home)/details");
+      }}
+    >
       <RestaurantCardCover
         key={name}
         source={{ uri: "https://picsum.photos/700" }}

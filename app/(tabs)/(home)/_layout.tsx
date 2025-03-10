@@ -16,7 +16,7 @@ export default function HomeLayout() {
       }}
     >
       <Stack.Screen name="index" />
-      {/* <Stack.Screen name="details" />  Will use this later if needed. for now in this tab , only 1 main screen*/}
+      <Stack.Screen name="details" />
     </Stack>
   );
 }
