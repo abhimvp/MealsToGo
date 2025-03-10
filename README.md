@@ -141,3 +141,47 @@ $ eslint . --ext .js,.jsx,.ts,.tsx
 Warning: React version not specified in eslint-plugin-react settings. See https://github.com/jsx-eslint/eslint-plugin-react#configuration .
 Done in 4.15s.
 ```
+
+## General Idea
+
+- **app directory**
+
+The **app** is a special directory. Any file you add to this directory becomes a route inside the native app and reflects the same URL for that route on the web.
+
+- **Root layout**
+
+Traditionally, React Native projects are structured with a single root component (defined as **App.js** or **index.js**). Similarly, the first layout file (**\_layout.tsx**) inside the **app** directory is considered to be the single root component.
+
+- **Create a route**
+
+In the **app** directory, a route is created by adding a file or a nested directory that includes **index.tsx** file.
+
+For example, to create an initial route of your app, you can add **index.tsx** to the **app** directory.
+
+## Resources
+
+- Card : https://callstack.github.io/react-native-paper/docs/components/Card/
+- styled-components can be used with React Native in the same way and with the same import.https://styled-components.com/docs/basics#react-native - styleSheets are great , but we want more consistency - there's something called DesignOps - when you're building a product , taking into account all of the constraints and making sure that the constraints are fit,picture perfect along the way - a design system - a theme - which gives us consistency `styled-components is the result of wondering how we could enhance CSS for styling React component systems. By focusing on a single use case we managed to optimize the experience for developers as well as the output for end users.` - so we will move away from StyleSheet syntax and create components having their styling already on it. For example : Also DO `yarn add styled-components`
+
+```tsx
+import React from "react";
+import styled from "styled-components/native";
+
+const StyledView = styled.View`
+  background-color: papayawhip;
+`;
+
+const StyledText = styled.Text`
+  color: #bf4f74;
+`;
+
+class MyReactNativeComponent extends React.Component {
+  render() {
+    return (
+      <StyledView>
+        <StyledText>Hello World!</StyledText>
+      </StyledView>
+    );
+  }
+}
+```
