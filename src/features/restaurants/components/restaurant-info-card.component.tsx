@@ -84,18 +84,21 @@ export const RestaurantInfoCard = ({ restaurant }) => {
               {isClosedTemporarily && (
                 <Text style={{ color: "red" }}>CLOSED TEMPORARILY</Text>
               )}
-              <Spacer variant="left.large" />
-              {isOpenNow && (
-                <Open key={"isOpennow"} xml={open} width={20} height={20} />
-              )}
-              <Spacer variant="left.large" />
+              <Spacer position="left" size="small">
+                {isOpenNow && (
+                  <Open key={"isOpennow"} xml={open} width={20} height={20} />
+                )}
+              </Spacer>
+
+              <Spacer position="left" size="small">
+                <Image
+                  style={{ width: 15, height: 15 }}
+                  source={{
+                    uri: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+                  }}
+                />
+              </Spacer>
               {/*Concept of SPacer: Better to use View ,, bcoz we want elements to push other elements aside.*/}
-              <Image
-                style={{ width: 15, height: 15 }}
-                source={{
-                  uri: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-                }}
-              />
             </SectionEnd>
           </Rating>
         </Section>

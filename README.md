@@ -173,3 +173,4 @@ In summary, npx expo start -c or yarn expo start --clear starts the Expo develop
 
 - `open.js` - Adding Open Now SVG.
 - Build Spacer Component: Having a consistent spacer is better than using direct Views or marginLeft..etc
+  - optimize this component:
