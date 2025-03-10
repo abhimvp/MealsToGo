@@ -186,3 +186,62 @@ In summary, npx expo start -c or yarn expo start --clear starts the Expo develop
   - <https://reactnative.dev/docs/scrollview>
 - React Navigation - <https://reactnavigation.org/docs/getting-started/> - but i'll be using expo navigation tools - easy peasey. - able to navigate to details page as i needed using [`router`](https://docs.expo.dev/router/advanced/stack/#set-screen-options-dynamically)
 - for Icons: [Expo Icons Index](https://icons.expo.fyi/Index) & [Expo Icons Documentation](https://docs.expo.dev/guides/icons/#expovector-icons)
+
+## Backend - general idea - TODO
+
+```text
+Great! Let's outline a plan to set up your backend using API Gateway, Lambda, FastAPI, DynamoDB, and Cognito. This plan will guide you through the steps to integrate AWS backend services with your MealsToGo React Native app.
+
+Here’s a step-by-step plan:
+
+Phase 1: Backend Setup (AWS Services)
+
+AWS Account and Prerequisites:
+
+Ensure you have an active AWS account. If not, sign up at https://aws.amazon.com/.
+Install the AWS Command Line Interface (CLI) on your local machine. Follow the instructions here: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html.
+Configure the AWS CLI with your credentials. Run aws configure in your terminal and enter your AWS Access Key ID, Secret Access Key, default region, and output format.
+Make sure you have Python and Node.js installed on your development machine, as we'll be using them for FastAPI and potentially some deployment tools.
+Set up DynamoDB:
+
+We'll start by defining the data structure for your MealsToGo app. Let's assume you need to store restaurant information and user data. We can create two DynamoDB tables:
+Restaurants Table: To store restaurant details (name, location, menu, etc.).
+Users Table: To store user profiles and authentication information (initially, we might rely on Cognito for user profiles, but we can extend this table later if needed).
+We will define the attributes and primary keys for these tables.
+Set up Amazon Cognito User Pool:
+
+Create a Cognito User Pool to manage user identities. This will handle user registration, login, password management, and potentially multi-factor authentication.
+Configure sign-up experience, password policies, and any required attributes for user profiles.
+Develop FastAPI Backend Application:
+
+Initialize a new FastAPI project. You can start with a basic structure and then add API endpoints as needed.
+Define API endpoints for:
+Fetching restaurant listings
+Retrieving details for a specific restaurant
+User authentication (though Cognito handles most of this, you might have endpoints for custom user logic if needed)
+Potentially order placement, user profile updates, etc. (depending on the features you plan to implement).
+Implement the logic within your FastAPI endpoints to interact with DynamoDB to fetch and store data. We'll use the AWS SDK for Python (Boto3) to interact with DynamoDB.
+For authentication, we'll configure API Gateway to use Cognito for authorization, so FastAPI endpoints will be protected.
+Deploy FastAPI Backend to AWS Lambda and API Gateway:
+
+We'll use a serverless deployment tool like AWS Serverless Application Model (SAM) or Zappa to deploy your FastAPI application as a Lambda function. SAM is AWS's native tool and is well-integrated. Zappa is another popular option, especially for deploying WSGI applications like FastAPI to Lambda.
+This tool will handle packaging your FastAPI application, deploying it to Lambda, and setting up API Gateway to trigger your Lambda function when API endpoints are hit.
+Configure API Gateway:
+
+If the deployment tool doesn't fully configure API Gateway, we'll manually configure API Gateway to:
+Create API endpoints that map to your FastAPI application's routes.
+Integrate these endpoints with your deployed Lambda function.
+Set up a Cognito User Pool Authorizer on API Gateway to secure your API endpoints. This ensures that only authenticated users (with valid tokens from Cognito) can access your backend APIs.
+Phase 2: React Native App Integration
+
+Integrate React Native App with Backend APIs:
+
+In your React Native MealsToGo app, you'll need to make HTTP requests to the API Gateway endpoints you created.
+For user authentication, you'll use the AWS SDK for JavaScript or AWS Amplify in your React Native app to interact with Cognito. This will handle user sign-up and sign-in, and retrieve authentication tokens.
+Include the authentication token in the headers of your API requests to API Gateway. API Gateway will then use the Cognito Authorizer to validate the token before forwarding the request to your Lambda function.
+Implement data fetching logic in your React Native app to call your API endpoints and display restaurant data, user profile information, etc.
+Testing and Iteration:
+
+Thoroughly test the entire flow: user registration, login, accessing protected API endpoints, data retrieval, and any other features you implement.
+Based on testing and your needs, iterate on both the backend (FastAPI, DynamoDB, API Gateway, Cognito) and the frontend (React Native app).
+```
