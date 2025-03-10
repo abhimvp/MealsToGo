@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components/native";
+import styled, { useTheme } from "styled-components/native";
 
 const sizeVariant = {
   small: 1,
@@ -14,20 +14,39 @@ const positionVariant = {
   bottom: "marginBottom",
 };
 
-const getVariant = (position, size, theme) => {
+const getVariant = (
+  position: "top" | "left" | "right" | "bottom",
+  size: "small" | "medium" | "large",
+  theme: any
+) => {
   //   console.log(`${positionVariant[position]}:${sizeVariant[size]}`);
-  const sizeIndex = sizeVariant[size];
-  const property = positionVariant[position];
+  const sizeIndex = sizeVariant[size as "small" | "medium" | "large"];
+  const property =
+    positionVariant[position as "top" | "left" | "right" | "bottom"];
   const value = theme.space[sizeIndex];
-  console.log(`${property}:${value}`);
+  // console.log(`${property}:${value}`);
   return `${property}:${value}`;
 };
 
-export const Spacer = styled.View`
-  ${({ position, size, theme }) => getVariant(position, size, theme)};
+const SpacerView = styled.View`
+  ${({ variant }) => variant};
 `;
 
-Spacer.defaultProps = {
-  size: "small",
-  position: "top",
+// we are running a dynamic function inside the styled component.
+export const Spacer = ({
+  position = "top",
+  size = "small",
+  children,
+}: {
+  position?: "top" | "left" | "right" | "bottom";
+  size?: "small" | "medium" | "large";
+  children?: React.ReactNode;
+}) => {
+  const theme = useTheme();
+  const variant = getVariant(
+    position as "top" | "left" | "right" | "bottom",
+    size as "small" | "medium" | "large",
+    theme
+  );
+  return <SpacerView variant={variant}>{children}</SpacerView>;
 };

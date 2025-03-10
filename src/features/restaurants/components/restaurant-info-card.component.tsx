@@ -1,57 +1,21 @@
 import React from "react";
-import { Text, Image, View } from "react-native";
-import styled from "styled-components/native";
-import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { Text } from "../../../components/typography/text.component";
+import {
+  RestaurantCard,
+  RestaurantCardCover,
+  Info,
+  Section,
+  SectionEnd,
+  Rating,
+  Icon,
+  Address,
+  Open,
+} from "./restaurant-info-card.styles";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 
-const Info = styled.View`
-  padding: ${(props) => props.theme.space[3]};
-`;
-
-// here we are using styled components to style the text.
-const Title = styled.Text`
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.body};
-  color: ${(props) => props.theme.colors.ui.primary};
-`;
-// here we are using styled components to style the Card component.
-const RestaurantCard = styled(Card)`
-  backgroundcolor: ${(props) => props.theme.colors.bg.primary};
-  fontweight: bold;
-`;
-
-const RestaurantCardCover = styled(Card.Cover)`
-  padding: ${(props) => props.theme.space[2]};
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const Address = styled.Text`
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.caption};
-`;
-
-const Rating = styled.View`
-  flex-direction: row;
-  padding-top: ${(props) => props.theme.space[1]};
-  padding-bottom: ${(props) => props.theme.space[1]};
-`;
-
-const Section = styled.View`
-  flex-direction: row;
-  align-items: center;
-`;
-const SectionEnd = styled.View`
-  flex: 1;
-  flex-direction: row;
-  justify-content: flex-end;
-`;
-
-const Open = styled(SvgXml)`
-  flex-direction: row;
-`;
 // here we get the restaurant name from search bar
 export const RestaurantInfoCard = ({ restaurant }) => {
   const {
@@ -73,7 +37,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
         source={{ uri: "https://picsum.photos/700" }}
       />
       <Info>
-        <Title>{name}</Title>
+        <Text variant="label">{name}</Text>
         <Section>
           <Rating>
             {/* here we are mapping the ratingArray to display the stars */}
@@ -82,17 +46,16 @@ export const RestaurantInfoCard = ({ restaurant }) => {
             ))}
             <SectionEnd>
               {isClosedTemporarily && (
-                <Text style={{ color: "red" }}>CLOSED TEMPORARILY</Text>
+                <Text variant="error">CLOSED TEMPORARILY</Text>
               )}
-              <Spacer position="left" size="small">
+              <Spacer position="left" size="medium">
                 {isOpenNow && (
                   <Open key={"isOpennow"} xml={open} width={20} height={20} />
                 )}
               </Spacer>
 
-              <Spacer position="left" size="small">
-                <Image
-                  style={{ width: 15, height: 15 }}
+              <Spacer position="left" size="medium">
+                <Icon
                   source={{
                     uri: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
                   }}
@@ -102,7 +65,6 @@ export const RestaurantInfoCard = ({ restaurant }) => {
             </SectionEnd>
           </Rating>
         </Section>
-
         <Address>{address}</Address>
       </Info>
     </RestaurantCard>
