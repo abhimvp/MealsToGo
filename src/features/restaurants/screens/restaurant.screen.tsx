@@ -8,8 +8,8 @@ import { RestaurantsContext } from "@/src/services/restaurants/restaurant.contex
 
 export const RestaurantScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const restaruantContext = useContext(RestaurantsContext);
-  console.log(restaruantContext); // {"restaurants": [1, 2, 3, 4, 5, 6, 7, 8, 9]}
+  const { restaurants, isLoading, error } = useContext(RestaurantsContext);
+
   return (
     <SafeArea>
       <SearchContainer>
@@ -21,22 +21,14 @@ export const RestaurantScreen = () => {
         />
       </SearchContainer>
       <RestaurantList
-        data={restaruantContext.restaurants}
-        renderItem={() => (
-          <Spacer position="bottom" size="large">
-            <RestaurantInfoCard
-              restaurant={{
-                name: "My Restaurant",
-                icon: "XX",
-                photos: ["XXX"],
-                address: "100 some random street",
-                openingHours: "8:00 AM - 9:00 PM",
-                rating: 4,
-                isClosedTemporarily: true,
-              }}
-            />
-          </Spacer>
-        )}
+        data={restaurants}
+        renderItem={({ item }) => {
+          return (
+            <Spacer position="bottom" size="large">
+              <RestaurantInfoCard restaurant={item} />
+            </Spacer>
+          );
+        }}
         keyExtractor={(item) => item.name}
       />
     </SafeArea>

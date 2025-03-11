@@ -195,6 +195,7 @@ In summary, npx expo start -c or yarn expo start --clear starts the Expo develop
 - [camelize package](https://www.npmjs.com/package/camelize) - recursively transform key strings to camel-case - ex : `fee_fie_foe: 'fum',` To `"feeFieFoe": "fum",` - `yarn add camelize`
 
 - Setting Up RestaurantContext
+- Hooking up our Context
 
 ## Backend - general idea - TODO
 

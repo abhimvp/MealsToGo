@@ -46,7 +46,6 @@ export const Open = styled(SvgXml)`
   flex-direction: row;
 `;
 
-// here we are using styled components to style the text.
 // getting rid of this as now we have Text component in typography folder.
 // const Title = styled.Text`
 //   font-family: ${(props) => props.theme.fonts.body};
