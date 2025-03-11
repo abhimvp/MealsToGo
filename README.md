@@ -197,6 +197,14 @@ In summary, npx expo start -c or yarn expo start --clear starts the Expo develop
 - Setting Up RestaurantContext
 - Hooking up our Context
 - [Activity Indicator](https://callstack.github.io/react-native-paper/docs/components/ActivityIndicator/)
+- ArchitectureOverview - UptoNow
+  ![ArchitectureOverview](/assets/images/image.png)
+- Geocoding & Search
+  - [Geocoding API Overview](https://developers.google.com/maps/documentation/geocoding/overview) - The Geocoding API is a service that accepts a place as an address, latitude and longitude coordinates, or Place ID. It converts the address into latitude and longitude coordinates and a Place ID, or converts latitude and longitude coordinates or a Place ID into an address.
+  - [places API Overview](https://developers.google.com/maps/documentation/places/web-service/overview) - The Places API is a service that accepts HTTP requests for location data through a variety of methods. It returns formatted location data and imagery about establishments, geographic locations, or prominent points of interest.
+- Setting Up Geocoding Service(`location Folder`)
+- setting up our geocidng context
+- Re-arranged code
 
 ## Backend - general idea - TODO
 
