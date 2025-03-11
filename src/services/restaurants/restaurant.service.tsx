@@ -3,7 +3,7 @@ import camelize from "camelize";
 
 // A request to get all the restaurants & it needs location - with it we can get the
 // restaurants in that location - in our mocck data we have 4 locations to playaround
-export const restaurantsRequest = (location = "37.7749295,-122.4194155") => {
+export const restaurantsRequest = (location) => {
   // console.log(location+` mock is the location`);
   return new Promise((resolve, reject) => {
     const mock = mocks[location as keyof typeof mocks];
@@ -22,6 +22,7 @@ export const restaurantTransform = ({ results = [] }) => {
     });
     return {
       ...restaurant,
+      address: restaurant.vicinity,
       isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,
       isClosedTemporarily: restaurant.business_status === "CLOSED_TEMPORARILY",
     };

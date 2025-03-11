@@ -27,9 +27,11 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     isOpenNow,
     rating,
     isClosedTemporarily,
+    placeId,
   } = restaurant; //here restaurant is the object so we got to destructure it.
   const router = useRouter();
-  const ratingArray = Array.from(new Array(Math.floor(rating)));
+  const validRating = typeof rating === "number" ? rating : 0;
+  const ratingArray = Array.from(new Array(Math.floor(validRating)));
   // https://docs.expo.dev/router/advanced/stack/#set-screen-options-dynamically
   return (
     <RestaurantCard
@@ -45,7 +47,12 @@ export const RestaurantInfoCard = ({ restaurant }) => {
           <Rating>
             {/* here we are mapping the ratingArray to display the stars */}
             {ratingArray.map((_, index) => (
-              <SvgXml key={`star-${index}`} xml={star} width={20} height={20} />
+              <SvgXml
+                key={`star-${placeId}-${index}`}
+                xml={star}
+                width={20}
+                height={20}
+              />
             ))}
             <SectionEnd>
               {isClosedTemporarily && (

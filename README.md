@@ -205,6 +205,7 @@ In summary, npx expo start -c or yarn expo start --clear starts the Expo develop
 - Setting Up Geocoding Service(`location Folder`)
 - setting up our geocidng context
 - Re-arranged code
+- Hooking Up the SearchBar
 
 ## Backend - general idea - TODO
 
