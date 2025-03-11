@@ -196,6 +196,7 @@ In summary, npx expo start -c or yarn expo start --clear starts the Expo develop
 
 - Setting Up RestaurantContext
 - Hooking up our Context
+- [Activity Indicator](https://callstack.github.io/react-native-paper/docs/components/ActivityIndicator/)
 
 ## Backend - general idea - TODO
 
