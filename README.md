@@ -187,6 +187,13 @@ In summary, npx expo start -c or yarn expo start --clear starts the Expo develop
 - React Navigation - <https://reactnavigation.org/docs/getting-started/> - but i'll be using expo navigation tools - easy peasey. - able to navigate to details page as i needed using [`router`](https://docs.expo.dev/router/advanced/stack/#set-screen-options-dynamically)
 - for Icons: [Expo Icons Index](https://icons.expo.fyi/Index) & [Expo Icons Documentation](https://docs.expo.dev/guides/icons/#expovector-icons)
 
+- [Passing Data Deeply with Context](https://react.dev/learn/passing-data-deeply-with-context) & [Context - old docs](https://legacy.reactjs.org/docs/context.html) - `Context lets a parent component provide data to the entire tree below it.`
+- Anytime we're trying to get information from somewhere , it's in the same place.so we're going to be isolating how we talk to service.the way we do that through the pattern called `services`.create a folder.This folder is going to be where all of our logic around talking to external services happen, whether it be google , facebook , or aws ..etc.here is where we're going to talking to the servers.also name different services we have inside that folder like `restaurant service` where we get restaurant data and we can have `user service` to get user info.For now we'll use mock data to play around.
+  - every service will be linked to react-context.
+  - also whenever we do an API call , it's going to be something called ` a promise` which you need to `await` runs asynchronously, let's mimic our mocks as a promise as in real-time.
+  - <https://reactnative.dev/docs/react-native-devtools>
+- [camelize package](https://www.npmjs.com/package/camelize) - recursively transform key strings to camel-case - ex : `fee_fie_foe: 'fum',` To `"feeFieFoe": "fum",` - `yarn add camelize`
+
 ## Backend - general idea - TODO
 
 ```text

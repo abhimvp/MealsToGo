@@ -8,6 +8,7 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { theme } from "../../../src/infrastructure/theme";
 import { RestaurantScreen } from "../../../src/features/restaurants/screens/restaurant.screen";
+
 export default function HomeScreen() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
