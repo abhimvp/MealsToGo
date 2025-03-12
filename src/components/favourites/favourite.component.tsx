@@ -3,7 +3,6 @@ import styled from "styled-components/native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { TouchableOpacity } from "react-native";
 import { FavouritesContext } from "@/src/services/favourites/favourites.context";
-import { View, Text } from "react-native";
 // https://icons.expo.fyi/Index/AntDesign/hearto
 // <AntDesign name="hearto" size={24} color="black" />
 

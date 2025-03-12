@@ -232,6 +232,7 @@ File name conventions: Index file names, such as index.tsx, match their parent d
 
 - `Favourites Feature` - to remind ourselves here, services layer is where we interact with data - let's hookup favourites feature.
   - `GoodToKnowWhatIsWhat`: In CSS, `z-index` controls the `stacking` order of positioned elements along the z-axis, meaning which `elements` appear on `top` of others when they overlap. `Elements with a higher z-index are placed in front of those with a lower value`, but it only works on elements with a `position` value other than static.
+- `Favourites Bar`
 
 ## Backend - general idea - TODO
 
