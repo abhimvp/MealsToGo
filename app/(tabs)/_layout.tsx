@@ -5,6 +5,7 @@ import { Tabs } from "expo-router";
 import { ThemeProvider } from "styled-components/native";
 import { LocationContextProvider } from "@/src/services/location/location.context";
 import { RestaurantsContextProvider } from "@/src/services/restaurants/restaurant.context";
+import { FavouritesContextProvider } from "@/src/services/favourites/favourites.context";
 import { theme } from "../../src/infrastructure/theme";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React from "react";
@@ -26,45 +27,47 @@ export default function TabLayout() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <LocationContextProvider>
-          <RestaurantsContextProvider>
-            <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
-              <Tabs.Screen
-                name="(home)"
-                options={{
-                  title: "Restaurants",
-                  tabBarIcon: () => (
-                    <Ionicons name="restaurant" size={24} color="orange" />
-                  ),
-                  headerShown: false,
-                }}
-              />
-              <Tabs.Screen
-                name="(maps)"
-                options={{
-                  title: "Maps",
-                  tabBarIcon: () => (
-                    <MaterialCommunityIcons
-                      name="google-maps"
-                      size={24}
-                      color="green"
-                    />
-                  ),
-                  headerShown: false,
-                }}
-              />
-              <Tabs.Screen
-                name="settings"
-                options={{
-                  title: "Settings",
-                  tabBarIcon: () => (
-                    <Feather name="settings" size={24} color="red" />
-                  ),
-                }}
-              />
-            </Tabs>
-          </RestaurantsContextProvider>
-        </LocationContextProvider>
+        <FavouritesContextProvider>
+          <LocationContextProvider>
+            <RestaurantsContextProvider>
+              <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
+                <Tabs.Screen
+                  name="(home)"
+                  options={{
+                    title: "Restaurants",
+                    tabBarIcon: () => (
+                      <Ionicons name="restaurant" size={24} color="orange" />
+                    ),
+                    headerShown: false,
+                  }}
+                />
+                <Tabs.Screen
+                  name="(maps)"
+                  options={{
+                    title: "Maps",
+                    tabBarIcon: () => (
+                      <MaterialCommunityIcons
+                        name="google-maps"
+                        size={24}
+                        color="green"
+                      />
+                    ),
+                    headerShown: false,
+                  }}
+                />
+                <Tabs.Screen
+                  name="settings"
+                  options={{
+                    title: "Settings",
+                    tabBarIcon: () => (
+                      <Feather name="settings" size={24} color="red" />
+                    ),
+                  }}
+                />
+              </Tabs>
+            </RestaurantsContextProvider>
+          </LocationContextProvider>
+        </FavouritesContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" backgroundColor="#000" />
     </>

@@ -7,10 +7,13 @@ import { SafeArea } from "@/src/components/utility/safe-area.component";
 import { Search } from "../components/search.component";
 import { RestaurantList, Loading, LoadingContainer } from "./restaurant.styles";
 import { RestaurantsContext } from "@/src/services/restaurants/restaurant.context";
+import { FavouritesContext } from "@/src/services/favourites/favourites.context";
 
 export const RestaurantScreen = () => {
   const router = useRouter();
   const { restaurants, isLoading, error } = useContext(RestaurantsContext);
+  const { favourites } = useContext(FavouritesContext);
+  // console.log(favourites);
 
   return (
     <SafeArea>

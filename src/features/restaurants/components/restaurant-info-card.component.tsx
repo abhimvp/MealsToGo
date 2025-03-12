@@ -15,6 +15,7 @@ import {
 } from "./restaurant-info-card.styles";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
+import { Favourite } from "@/src/components/favourites/favourite.component";
 
 interface Restaurant {
   name: string;
@@ -46,6 +47,7 @@ export const RestaurantInfoCard = ({
   const ratingArray = Array.from(new Array(Math.floor(validRating)));
   return (
     <RestaurantCard elevation={5}>
+      <Favourite restaurant={restaurant}/>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Text variant="label">{name}</Text>

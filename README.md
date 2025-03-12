@@ -223,11 +223,15 @@ File name conventions: Index file names, such as index.tsx, match their parent d
 - Restaurant details screen - group of menu List - <https://callstack.github.io/react-native-paper/docs/components/List/ListAccordionGroup> - add scrollView
 
 - Maps Feature - show the rastaurants in a location & when we click on restaurant pop-uup it should take us to restaurants-details screen of that restaurant in restaurants tab.
+
   - Install react native maps from [expo](https://docs.expo.dev/versions/latest/sdk/map-view/) - `yarn add  react-native-maps`
   - maps screen & search - build a standalone search on maps screen
   - Setting The Map Region & Map [Markers](https://github.com/react-native-maps/react-native-maps?tab=readme-ov-file#rendering-a-list-of-markers-on-a-map)
   - Custom maps [callout](https://github.com/react-native-maps/react-native-maps?tab=readme-ov-file#rendering-a-custom-marker-with-a-custom-callout) , when we click on map marker it show us the image of restaurant..etc - `yarn add react-native-webview` - [ref](https://github.com/react-native-maps/react-native-maps?tab=readme-ov-file#custom-callouts) - well callout thing doesn't work on android yet - time wasted lol.
   - I will link a marker to details page as callout isn't working on android.
+
+- `Favourites Feature` - to remind ourselves here, services layer is where we interact with data - let's hookup favourites feature.
+  - `GoodToKnowWhatIsWhat`: In CSS, `z-index` controls the `stacking` order of positioned elements along the z-axis, meaning which `elements` appear on `top` of others when they overlap. `Elements with a higher z-index are placed in front of those with a lower value`, but it only works on elements with a `position` value other than static.
 
 ## Backend - general idea - TODO
 
