@@ -220,7 +220,10 @@ File name conventions: Index file names, such as index.tsx, match their parent d
 - <https://reactnative.dev/docs/pressable>
 - <https://docs.expo.dev/develop/dynamic-routes/#access-parameters-from-dynamic-segments>
 
-- Restaurant details screen - group of menu List - <https://callstack.github.io/react-native-paper/docs/components/List/ListAccordionGroup> - add scrollView 
+- Restaurant details screen - group of menu List - <https://callstack.github.io/react-native-paper/docs/components/List/ListAccordionGroup> - add scrollView
+
+- Maps Feature - show the rastaurants in a location & when we click on restaurant pop-uup it should take us to restaurants-details screen of that restaurant in restaurants tab.
+  - Install react native maps from [expo](https://docs.expo.dev/versions/latest/sdk/map-view/) - `yarn add  react-native-maps`
 
 ## Backend - general idea - TODO
 

@@ -14,7 +14,7 @@ export default function UserLayout() {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="indexq" />
+      <Stack.Screen name="indexmap" />
       <Stack.Screen name="detailsq" />
     </Stack>
   );

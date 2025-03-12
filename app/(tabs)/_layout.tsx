@@ -28,7 +28,7 @@ export default function TabLayout() {
       <ThemeProvider theme={theme}>
         <LocationContextProvider>
           <RestaurantsContextProvider>
-            <Tabs screenOptions={{ tabBarActiveTintColor: "tomato" }}>
+            <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
               <Tabs.Screen
                 name="(home)"
                 options={{
@@ -40,7 +40,7 @@ export default function TabLayout() {
                 }}
               />
               <Tabs.Screen
-                name="(user)"
+                name="(maps)"
                 options={{
                   title: "Maps",
                   tabBarIcon: () => (
