@@ -1,5 +1,4 @@
 import React from "react";
-import { useRouter } from "expo-router";
 import { SvgXml } from "react-native-svg";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
@@ -17,8 +16,22 @@ import {
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 
-// here we get the restaurant name from search bar
-export const RestaurantInfoCard = ({ restaurant }) => {
+interface Restaurant {
+  name: string;
+  icon?: string;
+  photos: string[];
+  address: string;
+  isOpenNow?: boolean;
+  rating?: number;
+  isClosedTemporarily?: boolean;
+  placeId: string;
+}
+
+export const RestaurantInfoCard = ({
+  restaurant,
+}: {
+  restaurant: Restaurant;
+}) => {
   const {
     name,
     icon,
@@ -28,24 +41,16 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     rating,
     isClosedTemporarily,
     placeId,
-  } = restaurant; //here restaurant is the object so we got to destructure it.
-  const router = useRouter();
+  } = restaurant;
   const validRating = typeof rating === "number" ? rating : 0;
   const ratingArray = Array.from(new Array(Math.floor(validRating)));
-  // https://docs.expo.dev/router/advanced/stack/#set-screen-options-dynamically
   return (
-    <RestaurantCard
-      elevation={5}
-      onPress={() => {
-        router.push("/(tabs)/(home)/details");
-      }}
-    >
+    <RestaurantCard elevation={5}>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Text variant="label">{name}</Text>
         <Section>
           <Rating>
-            {/* here we are mapping the ratingArray to display the stars */}
             {ratingArray.map((_, index) => (
               <SvgXml
                 key={`star-${placeId}-${index}`}
@@ -63,7 +68,6 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                   <Open key={"isOpennow"} xml={open} width={20} height={20} />
                 )}
               </Spacer>
-
               <Spacer position="left" size="medium">
                 <Icon
                   source={{
@@ -71,7 +75,6 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                   }}
                 />
               </Spacer>
-              {/*Concept of SPacer: Better to use View ,, bcoz we want elements to push other elements aside.*/}
             </SectionEnd>
           </Rating>
         </Section>

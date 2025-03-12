@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useMemo,
-  useEffect,
-  createContext,
-  useContext,
-} from "react";
+import React, { useState, useEffect, createContext, useContext } from "react";
 import { restaurantsRequest, restaurantTransform } from "./restaurant.service";
 import { LocationContext } from "../location/location.context";
 
@@ -30,16 +24,15 @@ export const RestaurantsContextProvider = ({ children }) => {
           setIsLoading(false);
           setError(err);
         });
-    }, 2000); // wait for the response to come back
+    }, 2000);
   };
 
   useEffect(() => {
     if (location) {
-      console.log(location);
       const locationString = `${location.lat},${location.lng}`;
       retriveRestaurants(locationString);
     }
-  }, [location]); // render the useEffect only once when the component is mounted
+  }, [location]);
   return (
     <RestaurantsContext.Provider value={{ restaurants, isLoading, error }}>
       {children}

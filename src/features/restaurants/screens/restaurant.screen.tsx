@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { Pressable } from "react-native";
+import { useRouter } from "expo-router";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { Spacer } from "@/src/components/spacer/spacer.component";
 import { SafeArea } from "@/src/components/utility/safe-area.component";
@@ -7,6 +9,7 @@ import { RestaurantList, Loading, LoadingContainer } from "./restaurant.styles";
 import { RestaurantsContext } from "@/src/services/restaurants/restaurant.context";
 
 export const RestaurantScreen = () => {
+  const router = useRouter();
   const { restaurants, isLoading, error } = useContext(RestaurantsContext);
 
   return (
@@ -21,9 +24,18 @@ export const RestaurantScreen = () => {
         data={restaurants}
         renderItem={({ item }) => {
           return (
-            <Spacer position="bottom" size="large">
-              <RestaurantInfoCard restaurant={item} />
-            </Spacer>
+            <Pressable
+              onPress={() => {
+                router.push({
+                  pathname: "/(tabs)/(home)/details",
+                  params: { restaurant: JSON.stringify(item) },
+                });
+              }}
+            >
+              <Spacer position="bottom" size="large">
+                <RestaurantInfoCard restaurant={item} />
+              </Spacer>
+            </Pressable>
           );
         }}
         keyExtractor={(item) => item.name}
