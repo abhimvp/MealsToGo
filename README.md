@@ -224,6 +224,7 @@ File name conventions: Index file names, such as index.tsx, match their parent d
 
 - Maps Feature - show the rastaurants in a location & when we click on restaurant pop-uup it should take us to restaurants-details screen of that restaurant in restaurants tab.
   - Install react native maps from [expo](https://docs.expo.dev/versions/latest/sdk/map-view/) - `yarn add  react-native-maps`
+  - maps screen & search - build a standalone search on maps screen
 
 ## Backend - general idea - TODO
 
