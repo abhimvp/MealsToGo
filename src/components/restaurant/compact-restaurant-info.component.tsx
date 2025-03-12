@@ -1,17 +1,13 @@
 import React from "react";
 import styled from "styled-components/native";
-import WebView from "react-native-webview";
-import { Platform } from "react-native";
 
 import { Text } from "../typography/text.component";
-
+// CompactImage Component: The CompactImage component, defined as styled.
+// Image, is responsible for rendering the image.
+// react-native's Image component is designed to work across both Android and iOS platforms,
+//  handling image display natively.  The styling applied to CompactImage
+// ( border-radius, width, height) ensures the image is displayed compactly as intended.
 const CompactImage = styled.Image`
-  border-radius: 10px;
-  width: 120px;
-  height: 100px;
-`;
-
-const CompactWebview = styled(WebView)`
   border-radius: 10px;
   width: 120px;
   height: 100px;
@@ -23,11 +19,16 @@ const Item = styled.View`
   align-items: center;
 `;
 
-const isAndroid = Platform.OS === "android";
+interface CompactRestaurantInfoProps {
+  restaurant: any;
+  isMap: boolean;
+}
 
-export const CompactRestaurantInfo = ({ restaurant }) => {
-  const Image = isAndroid ? CompactWebview : CompactImage;
-    
+export const CompactRestaurantInfo = ({
+  restaurant,
+}: CompactRestaurantInfoProps) => {
+  const Image = CompactImage;
+
   return (
     <Item>
       <Image source={{ uri: restaurant.photos[0] }} />

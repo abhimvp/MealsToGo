@@ -30,7 +30,7 @@ export const FavouritesBar = ({ favourites, onNavigate }) => {
                   })
                 }
               >
-                <CompactRestaurantInfo restaurant={restaurant} />
+                <CompactRestaurantInfo isMap restaurant={restaurant} />
               </Pressable>
             </Spacer>
           );

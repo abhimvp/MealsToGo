@@ -233,6 +233,26 @@ File name conventions: Index file names, such as index.tsx, match their parent d
 - `Favourites Feature` - to remind ourselves here, services layer is where we interact with data - let's hookup favourites feature.
   - `GoodToKnowWhatIsWhat`: In CSS, `z-index` controls the `stacking` order of positioned elements along the z-axis, meaning which `elements` appear on `top` of others when they overlap. `Elements with a higher z-index are placed in front of those with a lower value`, but it only works on elements with a `position` value other than static.
 - `Favourites Bar`
+- `Storing Favourites` - problem - when we reload the app , all of the favourites dissapear, they are not being persisted , because useState is in local state & we're not storing it in anywhere , we can always store it on phone and on server as well , it's better to store them on phone ( as a caching mechanism until we have backend infrastructure let's store the first 20 favourites on phone itself.) - so how we can store it ? In react-native we have [Async Storage](https://react-native-async-storage.github.io/async-storage/docs/usage/) & also refer what does expo say about [AsyncStorage](https://docs.expo.dev/versions/latest/sdk/async-storage/)ByExpo - Do `npx expo install @react-native-async-storage/async-storage`
+
+```bash
+$ npx expo install @react-native-async-storage/async-storage
+› Installing 1 SDK 52.0.0 compatible native module using yarn
+> yarn add @react-native-async-storage/async-storage@1.23.1
+yarn add v1.22.22
+..
+...
+.....
+success Saved lockfile.
+success Saved 3 new dependencies.
+info Direct dependencies
+└─ @react-native-async-storage/async-storage@1.23.1
+info All dependencies
+├─ @react-native-async-storage/async-storage@1.23.1
+├─ is-plain-obj@2.1.0
+└─ merge-options@3.0.4
+Done in 14.34s.
+```
 
 ## Backend - general idea - TODO
 
