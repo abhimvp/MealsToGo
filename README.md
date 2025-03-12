@@ -216,9 +216,11 @@ Root layout: The app/_layout.tsx file. It defines shared UI elements such as hea
 File name conventions: Index file names, such as index.tsx, match their parent directory and do not add a path segment. For example, the index.tsx file in the app directory matches / route
 ```
 
-- https://docs.expo.dev/router/navigating-pages/#understanding-native-navigation
-- https://reactnative.dev/docs/pressable
-- https://docs.expo.dev/develop/dynamic-routes/#access-parameters-from-dynamic-segments
+- <https://docs.expo.dev/router/navigating-pages/#understanding-native-navigation>
+- <https://reactnative.dev/docs/pressable>
+- <https://docs.expo.dev/develop/dynamic-routes/#access-parameters-from-dynamic-segments>
+
+- Restaurant details screen - group of menu List - <https://callstack.github.io/react-native-paper/docs/components/List/ListAccordionGroup> - add scrollView 
 
 ## Backend - general idea - TODO
 
