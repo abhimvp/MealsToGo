@@ -254,6 +254,8 @@ info All dependencies
 Done in 14.34s.
 ```
 
+- Now it's time to Go for Authentication using Amazon Cognito-Free Tier (let's use it (;)) , instead of Firebase
+
 ## Backend - general idea - TODO
 
 ```text
@@ -312,3 +314,7 @@ Testing and Iteration:
 Thoroughly test the entire flow: user registration, login, accessing protected API endpoints, data retrieval, and any other features you implement.
 Based on testing and your needs, iterate on both the backend (FastAPI, DynamoDB, API Gateway, Cognito) and the frontend (React Native app).
 ```
+
+### Building backend - aws
+
+- to launch fastapi - `uvicorn main:app --reload` & `curl http://127.0.0.1:8000` & `curl http://127.0.0.1:8000/restaurants`

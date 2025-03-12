@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+.env
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+/_MEIPASS*/
+/MEIPASS*/
+site-packages/
+dist/
+build/
+*.spec
+
+# Unit test / coverage
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+*/.hypothesis/
+.pytest_cache/
+pytest-cov/
+*.py,cover
+*.py,covered
+*_temp_folder/
+*/.mypy_cache/
+
+# Environments
+.env
+.venv
+venv
+ENV
+env
+*.envrc
+*.direnv
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Environments
+.env/
+venv/
+ENV/
+environment/
