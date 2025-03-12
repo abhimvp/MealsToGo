@@ -226,6 +226,8 @@ File name conventions: Index file names, such as index.tsx, match their parent d
   - Install react native maps from [expo](https://docs.expo.dev/versions/latest/sdk/map-view/) - `yarn add  react-native-maps`
   - maps screen & search - build a standalone search on maps screen
   - Setting The Map Region & Map [Markers](https://github.com/react-native-maps/react-native-maps?tab=readme-ov-file#rendering-a-list-of-markers-on-a-map)
+  - Custom maps [callout](https://github.com/react-native-maps/react-native-maps?tab=readme-ov-file#rendering-a-custom-marker-with-a-custom-callout) , when we click on map marker it show us the image of restaurant..etc - `yarn add react-native-webview` - [ref](https://github.com/react-native-maps/react-native-maps?tab=readme-ov-file#custom-callouts) - well callout thing doesn't work on android yet - time wasted lol.
+  - I will link a marker to details page as callout isn't working on android.
 
 ## Backend - general idea - TODO
 
