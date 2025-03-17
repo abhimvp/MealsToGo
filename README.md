@@ -318,3 +318,4 @@ Based on testing and your needs, iterate on both the backend (FastAPI, DynamoDB,
 ### Building backend - aws
 
 - to launch fastapi - `uvicorn main:app --reload` & `curl http://127.0.0.1:8000` & `curl http://127.0.0.1:8000/restaurants`
+- Have a look at AWS SAM - & https://docs.aws.amazon.com/whitepapers/latest/aws-overview/mobile-services.html
